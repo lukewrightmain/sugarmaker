@@ -29,29 +29,29 @@
 #include "cpuminer-config.h"
 #include "miner.h"
 
-#include "yespower-1.0.1-power2b/yespower-p2b.h"
+#include "yespower-1.0.1/yespower.h"
 
 #include <stdlib.h>
 #include <string.h>
 #include <inttypes.h>
 
-int scanhash_mbc_yespower(int thr_id, uint32_t *pdata,
+int scanhash_tidecoin_yespower(int thr_id, uint32_t *pdata,
 	const uint32_t *ptarget,
 	uint32_t max_nonce, unsigned long *hashes_done)
 {
 	static const yespower_params_t params = {
-		.version = YESPOWER_1_0_BLAKE2B,
+		.version = YESPOWER_1_0,
 		.N = 2048,
-		.r = 32,
-		.pers = (const uint8_t *)"Now I am become Death, the destroyer of worlds",
-		.perslen = 46
+		.r = 8,
+		.pers = NULL,
+		.perslen = 0
 	};
 	union {
 		uint8_t u8[8];
 		uint32_t u32[20];
 	} data;
 	union {
-		yespower_binary_t_p2b yb;
+		yespower_binary_t yb;
 		uint32_t u32[7];
 	} hash;
 	uint32_t n = pdata[19] - 1;
@@ -64,7 +64,7 @@ int scanhash_mbc_yespower(int thr_id, uint32_t *pdata,
 	do {
 		be32enc(&data.u32[19], ++n);
 
-		if (yespower_tls_p2b(data.u8, 80, &params, &hash.yb))
+		if (yespower_tls(data.u8, 80, &params, &hash.yb))
 			abort();
 
 		if (le32dec(&hash.u32[7]) <= Htarg) {
