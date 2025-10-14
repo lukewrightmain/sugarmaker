@@ -113,16 +113,13 @@ am_sugarmaker_OBJECTS = sugarmaker-cpu-miner.$(OBJEXT) \
 	yespower-1.0.1/sugarmaker-sha256.$(OBJEXT) \
 	yespower-1.0.1/sugarmaker-yespower-opt.$(OBJEXT) \
 	sugarmaker-YespowerSugar.$(OBJEXT) \
+	sugarmaker-YespowerTidecoin.$(OBJEXT) \
 	sugarmaker-YespowerIso.$(OBJEXT) \
 	sugarmaker-YespowerNull.$(OBJEXT) \
 	sugarmaker-YespowerUrx.$(OBJEXT) \
 	sugarmaker-YespowerLitb.$(OBJEXT) \
 	sugarmaker-YespowerIots.$(OBJEXT) \
 	sugarmaker-YespowerItc.$(OBJEXT) \
-	yespower-1.0.1-power2b/sugarmaker-sha256-p2b.$(OBJEXT) \
-	yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.$(OBJEXT) \
-	yespower-1.0.1-power2b/sugarmaker-blake2b.$(OBJEXT) \
-	sugarmaker-YespowerMbc.$(OBJEXT) \
 	sugarmaker-YespowerYtn.$(OBJEXT) \
 	sugarmaker-YespowerAdvc.$(OBJEXT)
 sugarmaker_OBJECTS = $(am_sugarmaker_OBJECTS)
@@ -149,16 +146,13 @@ am__depfiles_remade = ./$(DEPDIR)/sugarmaker-YespowerAdvc.Po \
 	./$(DEPDIR)/sugarmaker-YespowerIso.Po \
 	./$(DEPDIR)/sugarmaker-YespowerItc.Po \
 	./$(DEPDIR)/sugarmaker-YespowerLitb.Po \
-	./$(DEPDIR)/sugarmaker-YespowerMbc.Po \
 	./$(DEPDIR)/sugarmaker-YespowerNull.Po \
 	./$(DEPDIR)/sugarmaker-YespowerSugar.Po \
+	./$(DEPDIR)/sugarmaker-YespowerTidecoin.Po \
 	./$(DEPDIR)/sugarmaker-YespowerUrx.Po \
 	./$(DEPDIR)/sugarmaker-YespowerYtn.Po \
 	./$(DEPDIR)/sugarmaker-cpu-miner.Po \
 	./$(DEPDIR)/sugarmaker-sha2.Po ./$(DEPDIR)/sugarmaker-util.Po \
-	yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Po \
-	yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Po \
-	yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Po \
 	yespower-1.0.1/$(DEPDIR)/sugarmaker-sha256.Po \
 	yespower-1.0.1/$(DEPDIR)/sugarmaker-yespower-opt.Po
 am__mv = mv -f
@@ -252,7 +246,7 @@ DIST_SUBDIRS = $(SUBDIRS)
 am__DIST_COMMON = $(dist_man_MANS) $(srcdir)/Makefile.in \
 	$(srcdir)/cpuminer-config.h.in AUTHORS COPYING ChangeLog NEWS \
 	README.md compile config.guess config.sub depcomp install-sh \
-	missing
+	ltmain.sh missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -427,14 +421,13 @@ sugarmaker_SOURCES = elist.h miner.h compat.h \
 									sha2.c \
 									yespower-1.0.1/sha256.c yespower-1.0.1/yespower-opt.c \
 									YespowerSugar.c \
+									YespowerTidecoin.c \
 									YespowerIso.c \
 									YespowerNull.c \
 									YespowerUrx.c \
 									YespowerLitb.c \
 									YespowerIots.c \
 									YespowerItc.c \
-									yespower-1.0.1-power2b/sha256-p2b.c yespower-1.0.1-power2b/yespower-opt-p2b.c yespower-1.0.1-power2b/blake2b.c \
-									YespowerMbc.c \
 									YespowerYtn.c \
 									YespowerAdvc.c
 
@@ -548,21 +541,6 @@ yespower-1.0.1/sugarmaker-sha256.$(OBJEXT):  \
 yespower-1.0.1/sugarmaker-yespower-opt.$(OBJEXT):  \
 	yespower-1.0.1/$(am__dirstamp) \
 	yespower-1.0.1/$(DEPDIR)/$(am__dirstamp)
-yespower-1.0.1-power2b/$(am__dirstamp):
-	@$(MKDIR_P) yespower-1.0.1-power2b
-	@: >>yespower-1.0.1-power2b/$(am__dirstamp)
-yespower-1.0.1-power2b/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) yespower-1.0.1-power2b/$(DEPDIR)
-	@: >>yespower-1.0.1-power2b/$(DEPDIR)/$(am__dirstamp)
-yespower-1.0.1-power2b/sugarmaker-sha256-p2b.$(OBJEXT):  \
-	yespower-1.0.1-power2b/$(am__dirstamp) \
-	yespower-1.0.1-power2b/$(DEPDIR)/$(am__dirstamp)
-yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.$(OBJEXT):  \
-	yespower-1.0.1-power2b/$(am__dirstamp) \
-	yespower-1.0.1-power2b/$(DEPDIR)/$(am__dirstamp)
-yespower-1.0.1-power2b/sugarmaker-blake2b.$(OBJEXT):  \
-	yespower-1.0.1-power2b/$(am__dirstamp) \
-	yespower-1.0.1-power2b/$(DEPDIR)/$(am__dirstamp)
 
 sugarmaker$(EXEEXT): $(sugarmaker_OBJECTS) $(sugarmaker_DEPENDENCIES) $(EXTRA_sugarmaker_DEPENDENCIES) 
 	@rm -f sugarmaker$(EXEEXT)
@@ -570,7 +548,6 @@ sugarmaker$(EXEEXT): $(sugarmaker_OBJECTS) $(sugarmaker_DEPENDENCIES) $(EXTRA_su
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
-	-rm -f yespower-1.0.1-power2b/*.$(OBJEXT)
 	-rm -f yespower-1.0.1/*.$(OBJEXT)
 
 distclean-compile:
@@ -581,17 +558,14 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerIso.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerItc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerLitb.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerMbc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerNull.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerSugar.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerTidecoin.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerUrx.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-YespowerYtn.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-cpu-miner.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-sha2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sugarmaker-util.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@yespower-1.0.1/$(DEPDIR)/sugarmaker-sha256.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@yespower-1.0.1/$(DEPDIR)/sugarmaker-yespower-opt.Po@am__quote@ # am--include-marker
 
@@ -701,6 +675,20 @@ sugarmaker-YespowerSugar.obj: YespowerSugar.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o sugarmaker-YespowerSugar.obj `if test -f 'YespowerSugar.c'; then $(CYGPATH_W) 'YespowerSugar.c'; else $(CYGPATH_W) '$(srcdir)/YespowerSugar.c'; fi`
 
+sugarmaker-YespowerTidecoin.o: YespowerTidecoin.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT sugarmaker-YespowerTidecoin.o -MD -MP -MF $(DEPDIR)/sugarmaker-YespowerTidecoin.Tpo -c -o sugarmaker-YespowerTidecoin.o `test -f 'YespowerTidecoin.c' || echo '$(srcdir)/'`YespowerTidecoin.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sugarmaker-YespowerTidecoin.Tpo $(DEPDIR)/sugarmaker-YespowerTidecoin.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='YespowerTidecoin.c' object='sugarmaker-YespowerTidecoin.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o sugarmaker-YespowerTidecoin.o `test -f 'YespowerTidecoin.c' || echo '$(srcdir)/'`YespowerTidecoin.c
+
+sugarmaker-YespowerTidecoin.obj: YespowerTidecoin.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT sugarmaker-YespowerTidecoin.obj -MD -MP -MF $(DEPDIR)/sugarmaker-YespowerTidecoin.Tpo -c -o sugarmaker-YespowerTidecoin.obj `if test -f 'YespowerTidecoin.c'; then $(CYGPATH_W) 'YespowerTidecoin.c'; else $(CYGPATH_W) '$(srcdir)/YespowerTidecoin.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sugarmaker-YespowerTidecoin.Tpo $(DEPDIR)/sugarmaker-YespowerTidecoin.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='YespowerTidecoin.c' object='sugarmaker-YespowerTidecoin.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o sugarmaker-YespowerTidecoin.obj `if test -f 'YespowerTidecoin.c'; then $(CYGPATH_W) 'YespowerTidecoin.c'; else $(CYGPATH_W) '$(srcdir)/YespowerTidecoin.c'; fi`
+
 sugarmaker-YespowerIso.o: YespowerIso.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT sugarmaker-YespowerIso.o -MD -MP -MF $(DEPDIR)/sugarmaker-YespowerIso.Tpo -c -o sugarmaker-YespowerIso.o `test -f 'YespowerIso.c' || echo '$(srcdir)/'`YespowerIso.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sugarmaker-YespowerIso.Tpo $(DEPDIR)/sugarmaker-YespowerIso.Po
@@ -784,62 +772,6 @@ sugarmaker-YespowerItc.obj: YespowerItc.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='YespowerItc.c' object='sugarmaker-YespowerItc.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o sugarmaker-YespowerItc.obj `if test -f 'YespowerItc.c'; then $(CYGPATH_W) 'YespowerItc.c'; else $(CYGPATH_W) '$(srcdir)/YespowerItc.c'; fi`
-
-yespower-1.0.1-power2b/sugarmaker-sha256-p2b.o: yespower-1.0.1-power2b/sha256-p2b.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT yespower-1.0.1-power2b/sugarmaker-sha256-p2b.o -MD -MP -MF yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Tpo -c -o yespower-1.0.1-power2b/sugarmaker-sha256-p2b.o `test -f 'yespower-1.0.1-power2b/sha256-p2b.c' || echo '$(srcdir)/'`yespower-1.0.1-power2b/sha256-p2b.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Tpo yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='yespower-1.0.1-power2b/sha256-p2b.c' object='yespower-1.0.1-power2b/sugarmaker-sha256-p2b.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o yespower-1.0.1-power2b/sugarmaker-sha256-p2b.o `test -f 'yespower-1.0.1-power2b/sha256-p2b.c' || echo '$(srcdir)/'`yespower-1.0.1-power2b/sha256-p2b.c
-
-yespower-1.0.1-power2b/sugarmaker-sha256-p2b.obj: yespower-1.0.1-power2b/sha256-p2b.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT yespower-1.0.1-power2b/sugarmaker-sha256-p2b.obj -MD -MP -MF yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Tpo -c -o yespower-1.0.1-power2b/sugarmaker-sha256-p2b.obj `if test -f 'yespower-1.0.1-power2b/sha256-p2b.c'; then $(CYGPATH_W) 'yespower-1.0.1-power2b/sha256-p2b.c'; else $(CYGPATH_W) '$(srcdir)/yespower-1.0.1-power2b/sha256-p2b.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Tpo yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='yespower-1.0.1-power2b/sha256-p2b.c' object='yespower-1.0.1-power2b/sugarmaker-sha256-p2b.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o yespower-1.0.1-power2b/sugarmaker-sha256-p2b.obj `if test -f 'yespower-1.0.1-power2b/sha256-p2b.c'; then $(CYGPATH_W) 'yespower-1.0.1-power2b/sha256-p2b.c'; else $(CYGPATH_W) '$(srcdir)/yespower-1.0.1-power2b/sha256-p2b.c'; fi`
-
-yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.o: yespower-1.0.1-power2b/yespower-opt-p2b.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.o -MD -MP -MF yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Tpo -c -o yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.o `test -f 'yespower-1.0.1-power2b/yespower-opt-p2b.c' || echo '$(srcdir)/'`yespower-1.0.1-power2b/yespower-opt-p2b.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Tpo yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='yespower-1.0.1-power2b/yespower-opt-p2b.c' object='yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.o `test -f 'yespower-1.0.1-power2b/yespower-opt-p2b.c' || echo '$(srcdir)/'`yespower-1.0.1-power2b/yespower-opt-p2b.c
-
-yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.obj: yespower-1.0.1-power2b/yespower-opt-p2b.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.obj -MD -MP -MF yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Tpo -c -o yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.obj `if test -f 'yespower-1.0.1-power2b/yespower-opt-p2b.c'; then $(CYGPATH_W) 'yespower-1.0.1-power2b/yespower-opt-p2b.c'; else $(CYGPATH_W) '$(srcdir)/yespower-1.0.1-power2b/yespower-opt-p2b.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Tpo yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='yespower-1.0.1-power2b/yespower-opt-p2b.c' object='yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o yespower-1.0.1-power2b/sugarmaker-yespower-opt-p2b.obj `if test -f 'yespower-1.0.1-power2b/yespower-opt-p2b.c'; then $(CYGPATH_W) 'yespower-1.0.1-power2b/yespower-opt-p2b.c'; else $(CYGPATH_W) '$(srcdir)/yespower-1.0.1-power2b/yespower-opt-p2b.c'; fi`
-
-yespower-1.0.1-power2b/sugarmaker-blake2b.o: yespower-1.0.1-power2b/blake2b.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT yespower-1.0.1-power2b/sugarmaker-blake2b.o -MD -MP -MF yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Tpo -c -o yespower-1.0.1-power2b/sugarmaker-blake2b.o `test -f 'yespower-1.0.1-power2b/blake2b.c' || echo '$(srcdir)/'`yespower-1.0.1-power2b/blake2b.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Tpo yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='yespower-1.0.1-power2b/blake2b.c' object='yespower-1.0.1-power2b/sugarmaker-blake2b.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o yespower-1.0.1-power2b/sugarmaker-blake2b.o `test -f 'yespower-1.0.1-power2b/blake2b.c' || echo '$(srcdir)/'`yespower-1.0.1-power2b/blake2b.c
-
-yespower-1.0.1-power2b/sugarmaker-blake2b.obj: yespower-1.0.1-power2b/blake2b.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT yespower-1.0.1-power2b/sugarmaker-blake2b.obj -MD -MP -MF yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Tpo -c -o yespower-1.0.1-power2b/sugarmaker-blake2b.obj `if test -f 'yespower-1.0.1-power2b/blake2b.c'; then $(CYGPATH_W) 'yespower-1.0.1-power2b/blake2b.c'; else $(CYGPATH_W) '$(srcdir)/yespower-1.0.1-power2b/blake2b.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Tpo yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='yespower-1.0.1-power2b/blake2b.c' object='yespower-1.0.1-power2b/sugarmaker-blake2b.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o yespower-1.0.1-power2b/sugarmaker-blake2b.obj `if test -f 'yespower-1.0.1-power2b/blake2b.c'; then $(CYGPATH_W) 'yespower-1.0.1-power2b/blake2b.c'; else $(CYGPATH_W) '$(srcdir)/yespower-1.0.1-power2b/blake2b.c'; fi`
-
-sugarmaker-YespowerMbc.o: YespowerMbc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT sugarmaker-YespowerMbc.o -MD -MP -MF $(DEPDIR)/sugarmaker-YespowerMbc.Tpo -c -o sugarmaker-YespowerMbc.o `test -f 'YespowerMbc.c' || echo '$(srcdir)/'`YespowerMbc.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sugarmaker-YespowerMbc.Tpo $(DEPDIR)/sugarmaker-YespowerMbc.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='YespowerMbc.c' object='sugarmaker-YespowerMbc.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o sugarmaker-YespowerMbc.o `test -f 'YespowerMbc.c' || echo '$(srcdir)/'`YespowerMbc.c
-
-sugarmaker-YespowerMbc.obj: YespowerMbc.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT sugarmaker-YespowerMbc.obj -MD -MP -MF $(DEPDIR)/sugarmaker-YespowerMbc.Tpo -c -o sugarmaker-YespowerMbc.obj `if test -f 'YespowerMbc.c'; then $(CYGPATH_W) 'YespowerMbc.c'; else $(CYGPATH_W) '$(srcdir)/YespowerMbc.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/sugarmaker-YespowerMbc.Tpo $(DEPDIR)/sugarmaker-YespowerMbc.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='YespowerMbc.c' object='sugarmaker-YespowerMbc.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o sugarmaker-YespowerMbc.obj `if test -f 'YespowerMbc.c'; then $(CYGPATH_W) 'YespowerMbc.c'; else $(CYGPATH_W) '$(srcdir)/YespowerMbc.c'; fi`
 
 sugarmaker-YespowerYtn.o: YespowerYtn.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(sugarmaker_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT sugarmaker-YespowerYtn.o -MD -MP -MF $(DEPDIR)/sugarmaker-YespowerYtn.Tpo -c -o sugarmaker-YespowerYtn.o `test -f 'YespowerYtn.c' || echo '$(srcdir)/'`YespowerYtn.c
@@ -1255,8 +1187,6 @@ clean-generic:
 distclean-generic:
 	-$(am__rm_f) $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || $(am__rm_f) $(CONFIG_CLEAN_VPATH_FILES)
-	-$(am__rm_f) yespower-1.0.1-power2b/$(DEPDIR)/$(am__dirstamp)
-	-$(am__rm_f) yespower-1.0.1-power2b/$(am__dirstamp)
 	-$(am__rm_f) yespower-1.0.1/$(DEPDIR)/$(am__dirstamp)
 	-$(am__rm_f) yespower-1.0.1/$(am__dirstamp)
 
@@ -1274,17 +1204,14 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerIso.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerItc.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerLitb.Po
-	-rm -f ./$(DEPDIR)/sugarmaker-YespowerMbc.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerNull.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerSugar.Po
+	-rm -f ./$(DEPDIR)/sugarmaker-YespowerTidecoin.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerUrx.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerYtn.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-cpu-miner.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-sha2.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-util.Po
-	-rm -f yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Po
-	-rm -f yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Po
-	-rm -f yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Po
 	-rm -f yespower-1.0.1/$(DEPDIR)/sugarmaker-sha256.Po
 	-rm -f yespower-1.0.1/$(DEPDIR)/sugarmaker-yespower-opt.Po
 	-rm -f Makefile
@@ -1339,17 +1266,14 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerIso.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerItc.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerLitb.Po
-	-rm -f ./$(DEPDIR)/sugarmaker-YespowerMbc.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerNull.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerSugar.Po
+	-rm -f ./$(DEPDIR)/sugarmaker-YespowerTidecoin.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerUrx.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-YespowerYtn.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-cpu-miner.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-sha2.Po
 	-rm -f ./$(DEPDIR)/sugarmaker-util.Po
-	-rm -f yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-blake2b.Po
-	-rm -f yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-sha256-p2b.Po
-	-rm -f yespower-1.0.1-power2b/$(DEPDIR)/sugarmaker-yespower-opt-p2b.Po
 	-rm -f yespower-1.0.1/$(DEPDIR)/sugarmaker-sha256.Po
 	-rm -f yespower-1.0.1/$(DEPDIR)/sugarmaker-yespower-opt.Po
 	-rm -f Makefile

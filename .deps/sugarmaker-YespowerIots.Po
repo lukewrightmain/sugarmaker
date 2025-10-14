@@ -1,23 +1,23 @@
 sugarmaker-YespowerIots.o: YespowerIots.c cpuminer-config.h miner.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/stdbool.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/inttypes.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/stdbool.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/inttypes.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/inttypes.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/sys/cdefs.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/android/versioning.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/android/api-level.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/bits/get_device_api_level_inlines.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/android/ndk-version.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/stdint.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/stdint.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/stdint.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/bits/wchar_limits.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/stddef.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stddef_header_macro.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stddef_ptrdiff_t.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stddef_size_t.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stddef_wchar_t.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stddef_null.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stddef_max_align_t.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stddef_offsetof.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/stddef.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stddef_header_macro.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stddef_ptrdiff_t.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stddef_size_t.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stddef_wchar_t.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stddef_null.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stddef_max_align_t.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stddef_offsetof.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/sys/time.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/sys/types.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/linux/types.h \
@@ -41,9 +41,9 @@ sugarmaker-YespowerIots.o: YespowerIots.c cpuminer-config.h miner.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android/asm/sigcontext.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android/asm/sve_context.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/bits/signal_types.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/limits.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/limits.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/limits.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/float.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/float.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/linux/limits.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/bits/posix_limits.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/linux/signal.h \
@@ -62,13 +62,13 @@ sugarmaker-YespowerIots.o: YespowerIots.c cpuminer-config.h miner.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/time.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/xlocale.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/jansson.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/stdarg.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stdarg_header_macro.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stdarg___gnuc_va_list.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stdarg_va_list.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stdarg_va_arg.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stdarg___va_copy.h \
-  /data/data/com.termux/files/usr/lib/clang/20/include/__stdarg_va_copy.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/stdarg.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stdarg_header_macro.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stdarg___gnuc_va_list.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stdarg_va_list.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stdarg_va_arg.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stdarg___va_copy.h \
+  /data/data/com.termux/files/usr/lib/clang/21/include/__stdarg_va_copy.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/string.h \
   /data/data/com.termux/files/usr/bin/../../usr/include/bits/strcasecmp.h \
@@ -110,25 +110,25 @@ sugarmaker-YespowerIots.o: YespowerIots.c cpuminer-config.h miner.h \
   yespower-1.0.1/yespower.h
 cpuminer-config.h:
 miner.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/stdbool.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/inttypes.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/stdbool.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/inttypes.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/inttypes.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/sys/cdefs.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/android/versioning.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/android/api-level.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/bits/get_device_api_level_inlines.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/android/ndk-version.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/stdint.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/stdint.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/stdint.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/bits/wchar_limits.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/stddef.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stddef_header_macro.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stddef_ptrdiff_t.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stddef_size_t.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stddef_wchar_t.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stddef_null.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stddef_max_align_t.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stddef_offsetof.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/stddef.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stddef_header_macro.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stddef_ptrdiff_t.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stddef_size_t.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stddef_wchar_t.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stddef_null.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stddef_max_align_t.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stddef_offsetof.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/sys/time.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/sys/types.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/linux/types.h:
@@ -152,9 +152,9 @@ miner.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android/asm/sigcontext.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/aarch64-linux-android/asm/sve_context.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/bits/signal_types.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/limits.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/limits.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/limits.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/float.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/float.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/linux/limits.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/bits/posix_limits.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/linux/signal.h:
@@ -173,13 +173,13 @@ miner.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/time.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/xlocale.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/jansson.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/stdarg.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stdarg_header_macro.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stdarg___gnuc_va_list.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stdarg_va_list.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stdarg_va_arg.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stdarg___va_copy.h:
-/data/data/com.termux/files/usr/lib/clang/20/include/__stdarg_va_copy.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/stdarg.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stdarg_header_macro.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stdarg___gnuc_va_list.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stdarg_va_list.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stdarg_va_arg.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stdarg___va_copy.h:
+/data/data/com.termux/files/usr/lib/clang/21/include/__stdarg_va_copy.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/stdio.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/string.h:
 /data/data/com.termux/files/usr/bin/../../usr/include/bits/strcasecmp.h:
